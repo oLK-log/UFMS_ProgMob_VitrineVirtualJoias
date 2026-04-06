@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">VitrineVirtualClaritas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Categoria">Aqui ficam as categorias</string>
+    <string name="Galeria">Aqui fica a Galeria</string>
+    <string name="Destaque">Aqui ficam os Destaques</string>
+
+    <string-array name="lista_categorias">
+        <item>Noivado</item>
+        <item>Colares</item>
+        <item>Brincos</item>
+        <item>Relógios</item>
+        <item>Conjuntos</item>
+    </string-array>
+
+    <string-array name="filtro_joias">
+        <item>Todos os Destaques</item>
+        <item>Ouro 18k</item>
+        <item>Prata 925</item>
+        <item>Diamantes</item>
+    </string-array>
+
+</resources>
