@@ -18,15 +18,15 @@ A ideia do Aplicativo Vitrine Virtual de Joias é um protótipo funcional de um 
  
 ### Entrega 1:
 #### Requisitos:
-* Utilização de BAsic Activity ou Bottom Navigation Activity;
+* Utilização de Basic Activity ou Bottom Navigation Activity;
 * Projeto com pelo menos 3 Fragmentos;
 * Ter no mínimo: 1 Spinner, 1 ListView, 1 GridView, Sons, Cores Imagens;
 * Ações sobre os itens do Spinner, do List e do Grid;
 * strings e strings-arry devem estar no arquivo strings.xml.
 <div align="center">
-  <img src="./img/entrega1_telaDestaques.img" alt="imagem diagrama conceitual" width="800"/>
-  <img src="./img/entrega1_telaCategorias.img" alt="imagem diagrama conceitual" width="800"/>
-  <img src="./img/entrega1_telaGaleria.img" alt="imagem diagrama conceitual" width="800"/>
+  <img src="./img/entrega1_telaCategorias.png" alt="imagem diagrama conceitual" width="250"/>
+  <img src="./img/entrega1_telaDestaques.png" alt="imagem diagrama conceitual" width="250"/>
+  <img src="./img/entrega1_telaGaleria.png" alt="imagem diagrama conceitual" width="250"/>
 </div>
   
 ⚠ **Atenção**: Material com fins de aprendizado, e assim sendo, pode conter **erros** e **insconsistências**.
