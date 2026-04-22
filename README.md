@@ -24,9 +24,9 @@ A ideia do Aplicativo Vitrine Virtual de Joias é um protótipo funcional de um 
 * Ações sobre os itens do Spinner, do List e do Grid;
 * strings e strings-arry devem estar no arquivo strings.xml.
 <div align="center">
-  <img src="./img/entrega1_telaCategorias.png" alt="imagem diagrama conceitual" width="250"/>
-  <img src="./img/entrega1_telaDestaques.png" alt="imagem diagrama conceitual" width="250"/>
-  <img src="./img/entrega1_telaGaleria.png" alt="imagem diagrama conceitual" width="250"/>
+  <img src="./img/entrega1_telaDestaques.png" alt="imagem tela Destaques" width="250"/>
+  <img src="./img/entrega1_telaCategorias.png" alt="imagem tela Categorias" width="250"/>
+  <img src="./img/entrega1_telaGaleria.png" alt="imagem tela Galeria" width="250"/>
 </div>
   
 ⚠ **Atenção**: Material com fins de aprendizado, e assim sendo, pode conter **erros** e **insconsistências**.
