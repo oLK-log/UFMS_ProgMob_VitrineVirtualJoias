@@ -1,5 +1,5 @@
 # UFMS_ProgMob_VitrineVirtualJoias
-Atividade Avaliativa da disciplina de Programacao Mobile de criacao de aplicativo movel.
+Atividade Avaliativa da disciplina de Programacao Mobile - criacao de aplicativo movel.
 
 * **Faculdade:** UFMS
 * **Curso:** Engenharia de Software
@@ -7,7 +7,7 @@ Atividade Avaliativa da disciplina de Programacao Mobile de criacao de aplicativ
   - Android Studio
  
 ### Descrição simplificada:
-Este repositório concentra as entragas das atividades avaliativas realizadas ao longo da disciplina de Programação Mobile. O objetivo principal é a construção de um aplicativo no Android Studio com linguagem de programação Java aplicando os conceitos apreendidos ao longo das aulas.
+Este repositório concentra as entregas das atividades avaliativas realizadas ao longo da disciplina de Programação Mobile. O objetivo principal é a construção de um aplicativo no Android Studio com linguagem de programação Java aplicando os conceitos apreendidos ao longo das aulas.
 
 ### Vitrine Virtual de Joias
 A ideia do Aplicativo Vitrine Virtual de Joias é um protótipo funcional de um e-commerce voltado para o mercado de joalheria. Projetado com uma interface limpa e navegação intuitiva, o aplicativo simula a experiência de um catalogo digital interativo para os clientes da loja. A aplicação é formada, a priori, por três telas principais - Fragmentos - gerenciadas por uma barra de navegação inferior(Bottom Navigation). Arquiteturalmente, a interface e as funcionalidades estão divididas em:
