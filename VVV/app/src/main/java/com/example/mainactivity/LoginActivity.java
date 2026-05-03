@@ -57,8 +57,16 @@ public class LoginActivity extends AppCompatActivity {
 
         Usuario usuarioLogado = AppDatabase.getInstance(this).usuarioDao().fazerLogin(email, senha);
         if(usuarioLogado != null){
+            //guardar ID do lojista
+            android.content.SharedPreferences preferenciais = getSharedPreferences("sessao_vvv", MODE_PRIVATE);
+            preferenciais.edit().putInt("idUsuario", usuarioLogado.id).apply();
+            //informar que usuario está logado
             Toast.makeText(this,"Usuário "+ usuarioLogado.nome + "logado", Toast.LENGTH_LONG).show();
             //ponto de acesso para a tela principal
+            //intent do Login para Vitrine
+            Intent intent = new Intent(LoginActivity.this, VitrineActivity.class);
+            startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "O E-mail ou senha está incorreto! Verifique e tente novamente.", Toast.LENGTH_LONG).show();
         }

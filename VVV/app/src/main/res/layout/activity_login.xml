@@ -27,6 +27,7 @@
         android:inputType="textEmailAddress"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
+        android:textColor="#212121"
     />
 
     <EditText
@@ -37,6 +38,7 @@
         android:textSize="20sp"
         android:inputType="textPassword"
         android:layout_marginBottom="32dp"
+        android:textColor="#212121"
     />
 
     <Button

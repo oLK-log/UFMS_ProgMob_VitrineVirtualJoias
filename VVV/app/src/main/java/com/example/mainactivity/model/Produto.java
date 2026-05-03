@@ -11,5 +11,6 @@ public class Produto {
     public String nome;
     public String descricao;
     public double preco;
-    public String codigoLoja;
+    public String imagemUri;
+    public int usuarioId;
 }

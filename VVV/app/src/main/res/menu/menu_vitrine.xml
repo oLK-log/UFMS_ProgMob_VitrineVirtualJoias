@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_inicio"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Inicio"
+    />
+    <item
+        android:id="@+id/menu_gerenciarProdutos"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Gerenciar"
+    />
+    <item
+        android:id="@+id/menu_perfil"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Perfil"
+    />
+
+</menu>

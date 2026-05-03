@@ -21,12 +21,12 @@ public interface ProdutoDao {
     @Delete
     void excluir(Produto produto);
 
-    //Query para buscar produtos de uma loja por meio do codigo
-    @Query("SELECT * FROM produtos WHERE codigoLoja = :codigoLoja")
-    List<Produto> listaPorLoja(String codigoLoja);
-
     //Query para buscar produto pelo nome digitado no campo de pesquisa
 
     @Query("SELECT * FROM produtos WHERE nome LIKE '%' || :busca || '%'")
     List<Produto> buscarProdutos(String busca);
+
+    //Query que busca todos os produtos que pertencem a um Lojista específico
+    @Query("SELECT * FROM produtos WHERE usuarioId = :idUsuario")
+    List<Produto> buscarProdutosDoLojista(int idUsuario);
 }
