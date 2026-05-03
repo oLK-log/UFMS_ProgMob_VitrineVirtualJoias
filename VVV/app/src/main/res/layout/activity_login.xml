@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FAFAFA"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="45sp"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:layout_marginTop="26dp"
+    />
+
+    <EditText
+        android:id="@+id/editLoginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+    />
+
+    <EditText
+        android:id="@+id/editLoginSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="32dp"
+    />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Entrar"
+        android:textSize="24dp"
+        android:layout_marginBottom="16dp"
+    />
+
+    <TextView
+        android:id="@+id/txtIrParaCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Não tem uma conta? Cadastre-se"
+        android:textColor="#1976D2"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textStyle="bold"
+    />
+</LinearLayout>
