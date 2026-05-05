@@ -82,6 +82,12 @@ public class CadastroProdutoActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro na Sessao do Usuario. Faça login novamente!", Toast.LENGTH_LONG).show();
             return;
         }
+        //salvando a imagem
+        String caminhoDefinitivoDaFoto="";
+        if(!uriFotoSelecionada.isEmpty()){
+            caminhoDefinitivoDaFoto=salvarImagemNaMemoriaDoApp(Uri.parse(uriFotoSelecionada));
+        }
+
 
         //Produto
         Produto novoProduto = new Produto();
@@ -90,7 +96,8 @@ public class CadastroProdutoActivity extends AppCompatActivity {
         // conversoes
         novoProduto.preco = Double.parseDouble(precoTexto);
         novoProduto.usuarioId = idLojista;
-        novoProduto.imagemUri = uriFotoSelecionada;
+        //salvar caminho
+        novoProduto.imagemUri = caminhoDefinitivoDaFoto;
 
         //envio pro DB
         AppDatabase.getInstance(this).produtoDao().inserir(novoProduto);
@@ -106,5 +113,31 @@ public class CadastroProdutoActivity extends AppCompatActivity {
         uriFotoSelecionada = "";
         */
     }
+    //metodo para resolver problema de nao manter foto
+    //pega a foto temporária e faz uma cópia local no App
+    private String salvarImagemNaMemoriaDoApp(Uri uriGaleria) {
+        try{
+            java.io.InputStream inputStream = getContentResolver().openInputStream(uriGaleria);
+            String nomeArquivo = "produto" + System.currentTimeMillis() + ".jpg";
+            java.io.File arquivoInterno = new java.io.File(getFilesDir(), nomeArquivo);
+            java.io.FileOutputStream outputStream= new java.io.FileOutputStream(arquivoInterno);
+
+            //copiar dados
+            byte[] buffer = new byte[1024];
+            int tamanho;
+            while ((tamanho = inputStream.read(buffer))>0) {
+                outputStream.write(buffer, 0, tamanho);
+            }
+            //encerrar conexoes
+            outputStream.close();
+            inputStream.close();
+
+            return Uri.fromFile(arquivoInterno).toString();
+        }catch (Exception e){
+            e.printStackTrace();
+            return "";//retorna vazio para não bugar o banco
+        }
+    }
+
 
 }
