@@ -50,6 +50,15 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         } else {
             holder.imgItemProduto.setImageResource(android.R.drawable.ic_menu_camera);
         }
+        //acao de clique no cartao do produto
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                android.content.Intent intent = new android.content.Intent(v.getContext(), com.example.mainactivity.CadastroProdutoActivity.class);//chama tela de cadastro
+                intent.putExtra("idProdutoEditado", produtoAtual.id);//usa id do produto
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     //definir tamanho da rolagem - comunicacao com lista

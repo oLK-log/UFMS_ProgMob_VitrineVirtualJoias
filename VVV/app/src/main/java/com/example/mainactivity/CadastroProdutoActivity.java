@@ -22,10 +22,11 @@ import com.example.mainactivity.model.Produto;
 public class CadastroProdutoActivity extends AppCompatActivity {
     private ImageView imgFotoProduto;
     private EditText editNomeProduto, editDescricaoProduto, editPrecoProduto;
-    private Button btnSalvarProduto;
+    private Button btnSalvarProduto, btnExcluirProduto;
     private String uriFotoSelecionada = "";
     //abrir galeria local
     private ActivityResultLauncher<String> abrirGaleria;
+    private int idProdutoEdicao = -1;//-1 significa que é produto novo
 
     @Override
    protected void onCreate(Bundle savedInstanceState){
@@ -37,6 +38,7 @@ public class CadastroProdutoActivity extends AppCompatActivity {
         editDescricaoProduto = findViewById(R.id.editDescricaoProduto);
         editPrecoProduto = findViewById(R.id.editPrecoProduto);
         btnSalvarProduto = findViewById(R.id.btnSalvarProduto);
+        btnExcluirProduto = findViewById(R.id.btnExcluirProduto);
         //destino foto
         abrirGaleria = registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
@@ -44,6 +46,7 @@ public class CadastroProdutoActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(Uri uri) {
                         if(uri != null){
+                            //ft temporaria
                             uriFotoSelecionada = uri.toString();//guarda para o bd
                             imgFotoProduto.setImageURI(uri);
                         }
@@ -57,6 +60,11 @@ public class CadastroProdutoActivity extends AppCompatActivity {
                 abrirGaleria.launch("image/*");
             }
         });
+        //verificar se o ID do produto foi pego pelo adapter
+        idProdutoEdicao = getIntent().getIntExtra("idProdutoEditado", -1);
+        if(idProdutoEdicao != -1){
+            prepararTelaEdicao();
+        }
         //salvar bd
         btnSalvarProduto.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -64,8 +72,41 @@ public class CadastroProdutoActivity extends AppCompatActivity {
                 salvarProdutoNoBanco();
             }
         });
+
+        //Excluir
+        btnExcluirProduto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Produto produtoDeletado = new Produto();
+                produtoDeletado.id = idProdutoEdicao;
+                AppDatabase.getInstance(CadastroProdutoActivity.this).produtoDao().excluir(produtoDeletado);
+                Toast.makeText(CadastroProdutoActivity.this, "Produto excluído com sucesso!",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 
+    private void prepararTelaEdicao() {
+        Produto produtoAntigo = AppDatabase.getInstance(this).produtoDao().buscarProdutoPorId(idProdutoEdicao);
+
+        if(produtoAntigo != null){
+            editNomeProduto.setText(produtoAntigo.nome);
+            editDescricaoProduto.setText(produtoAntigo.descricao);
+            editPrecoProduto.setText(String.valueOf(produtoAntigo.preco));
+            uriFotoSelecionada = produtoAntigo.imagemUri;
+            if(uriFotoSelecionada !=null && !uriFotoSelecionada.isEmpty()){
+                try {
+                    imgFotoProduto.setImageURI(Uri.parse(uriFotoSelecionada));
+                }catch (Exception e){
+                    imgFotoProduto.setImageResource(android.R.drawable.ic_menu_camera);
+                }
+            }
+            //muda o texto do btn Salvar para Atualizar
+            btnSalvarProduto.setText("Atualizar");
+            //Faz o botao excluir ficar visivel
+            btnExcluirProduto.setVisibility(View.VISIBLE);
+        }
+    }
     private void salvarProdutoNoBanco() {
         String nome = editNomeProduto.getText().toString();
         String descricao = editDescricaoProduto.getText().toString();
@@ -83,8 +124,8 @@ public class CadastroProdutoActivity extends AppCompatActivity {
             return;
         }
         //salvando a imagem
-        String caminhoDefinitivoDaFoto="";
-        if(!uriFotoSelecionada.isEmpty()){
+        String caminhoDefinitivoDaFoto=uriFotoSelecionada;
+        if(!uriFotoSelecionada.isEmpty() && uriFotoSelecionada.startsWith("content://")){
             caminhoDefinitivoDaFoto=salvarImagemNaMemoriaDoApp(Uri.parse(uriFotoSelecionada));
         }
 
@@ -99,9 +140,16 @@ public class CadastroProdutoActivity extends AppCompatActivity {
         //salvar caminho
         novoProduto.imagemUri = caminhoDefinitivoDaFoto;
 
-        //envio pro DB
-        AppDatabase.getInstance(this).produtoDao().inserir(novoProduto);
-        Toast.makeText(this, "Produto cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
+        //logica de decisao-inserir ou atualizar
+        if(idProdutoEdicao!= -1){ //edicao
+            novoProduto.id = idProdutoEdicao;
+            AppDatabase.getInstance(this).produtoDao().atualizar(novoProduto);
+            Toast.makeText(this, "Produto atualizado com sucesso", Toast.LENGTH_SHORT).show();
+        } else { //produto novo
+            //envio pro DB
+            AppDatabase.getInstance(this).produtoDao().inserir(novoProduto);
+            Toast.makeText(this, "Produto cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
+        }
 
         //limpar formulario
         finish();

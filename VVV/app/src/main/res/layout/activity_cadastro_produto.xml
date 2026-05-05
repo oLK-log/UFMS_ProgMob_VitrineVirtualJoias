@@ -71,4 +71,17 @@
         android:layout_height="wrap_content"
         android:text="Salvar"
         />
+
+    <!--btn Excluir so aparece se produto ja existente-->
+    <Button
+        android:id="@+id/btnExcluirProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excluir"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+    />
+
 </LinearLayout>
