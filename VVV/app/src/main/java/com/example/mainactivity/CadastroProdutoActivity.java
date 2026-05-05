@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -20,6 +21,7 @@ import com.example.mainactivity.database.AppDatabase;
 import com.example.mainactivity.model.Produto;
 
 public class CadastroProdutoActivity extends AppCompatActivity {
+    private TextView txtTituloTelaCadastro;
     private ImageView imgFotoProduto;
     private EditText editNomeProduto, editDescricaoProduto, editPrecoProduto;
     private Button btnSalvarProduto, btnExcluirProduto;
@@ -39,6 +41,7 @@ public class CadastroProdutoActivity extends AppCompatActivity {
         editPrecoProduto = findViewById(R.id.editPrecoProduto);
         btnSalvarProduto = findViewById(R.id.btnSalvarProduto);
         btnExcluirProduto = findViewById(R.id.btnExcluirProduto);
+        txtTituloTelaCadastro = findViewById(R.id.txtTituloTelaCadastro);
         //destino foto
         abrirGaleria = registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
@@ -105,6 +108,9 @@ public class CadastroProdutoActivity extends AppCompatActivity {
             btnSalvarProduto.setText("Atualizar");
             //Faz o botao excluir ficar visivel
             btnExcluirProduto.setVisibility(View.VISIBLE);
+            //mudar titulo tela para "Atualizar Produto"
+            txtTituloTelaCadastro.setText("Atualizar Produto");
+
         }
     }
     private void salvarProdutoNoBanco() {
