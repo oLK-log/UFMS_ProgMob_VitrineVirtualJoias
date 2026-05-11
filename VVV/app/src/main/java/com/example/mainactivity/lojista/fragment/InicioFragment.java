@@ -1,4 +1,4 @@
-package com.example.mainactivity.core.fragment;
+package com.example.mainactivity.lojista.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

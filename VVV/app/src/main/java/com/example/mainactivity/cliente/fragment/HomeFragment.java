@@ -1,4 +1,4 @@
-package com.example.mainactivity.cliente;
+package com.example.mainactivity.cliente.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

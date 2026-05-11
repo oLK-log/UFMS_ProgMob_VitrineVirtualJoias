@@ -1,4 +1,4 @@
-package com.example.mainactivity.lojista;
+package com.example.mainactivity.lojista.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mainactivity.R;
+import com.example.mainactivity.lojista.CadastroProdutoActivity;
 import com.example.mainactivity.lojista.adapter.ProdutoAdapter;
 import com.example.mainactivity.database.AppDatabase;
 import com.example.mainactivity.model.Produto;

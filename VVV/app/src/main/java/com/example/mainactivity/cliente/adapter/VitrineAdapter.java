@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mainactivity.R;
 import com.example.mainactivity.model.Produto;
@@ -27,7 +26,7 @@ public class VitrineAdapter extends RecyclerView.Adapter<VitrineAdapter.VitrineV
     @NonNull
     @Override
     public VitrineViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vitrine, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_produto_vitrine, parent, false);
         return new VitrineViewHolder(view);
     }
     @Override

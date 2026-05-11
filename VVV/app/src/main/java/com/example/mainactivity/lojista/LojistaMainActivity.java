@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mainactivity.R;
-import com.example.mainactivity.core.fragment.InicioFragment;
 import com.example.mainactivity.core.fragment.PerfilFragment;
+import com.example.mainactivity.lojista.fragment.GerenciarFragment;
+import com.example.mainactivity.lojista.fragment.InicioFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

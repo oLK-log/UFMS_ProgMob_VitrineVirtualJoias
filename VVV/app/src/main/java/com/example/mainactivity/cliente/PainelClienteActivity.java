@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mainactivity.R;
+import com.example.mainactivity.cliente.fragment.HomeFragment;
+import com.example.mainactivity.cliente.fragment.PedidoFragment;
 import com.example.mainactivity.core.fragment.PerfilFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -35,7 +37,7 @@ public class PainelClienteActivity extends AppCompatActivity{
                 if(itemId == R.id.menu_home_cliente){
                     fragmentSelecionado = new HomeFragment();
                 } else if(itemId == R.id.menu_pedido_cliente){
-                    //fragmentSelecionado = new PedidoFragment()
+                    fragmentSelecionado = new PedidoFragment();
                 } else if(itemId == R.id.menu_perfil_cliente){
                     fragmentSelecionado = new PerfilFragment();
                 }

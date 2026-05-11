@@ -27,7 +27,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
     @NonNull
     @Override
     public ProdutoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_produto, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_produto_gerenciar, parent, false);
         return new ProdutoViewHolder(view);
     }
     //preencher molde
