@@ -23,6 +23,12 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         this.listaProdutos = listaProdutos;
     }
 
+    //met para atualizar os dados do adaptador
+    public void atualizarLista(List<Produto> novaLista) {
+        this.listaProdutos = novaLista;
+        notifyDataSetChanged();
+    }
+
     //criar molde
     @NonNull
     @Override

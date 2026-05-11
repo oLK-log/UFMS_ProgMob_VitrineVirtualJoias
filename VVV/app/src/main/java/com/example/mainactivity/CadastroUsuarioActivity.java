@@ -2,6 +2,7 @@ package com.example.mainactivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -18,7 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mainactivity.database.AppDatabase;
 import com.example.mainactivity.model.Usuario;
 
-public class MainActivity extends AppCompatActivity{
+import java.io.File;
+import java.io.FileOutputStream;
+
+public class CadastroUsuarioActivity extends AppCompatActivity{
     private ImageView imgFotoPerfil;
     private EditText editNome, editEmail, editSenha;
     private Button btnTirarFoto, btnCadastrar;
@@ -69,6 +73,24 @@ public class MainActivity extends AppCompatActivity{
             }
     );
 
+    //funcao para pegar a imagem(bit map) e salvar no armazenamentp
+    private String salvarImagemLocal(Bitmap bitmap){
+        if(bitmap == null) return "";
+        try{
+            //criando arquivo localmente
+            File arquivo = new File(getFilesDir(), "perfil_" + System.currentTimeMillis()+ ".png");
+            FileOutputStream out = new FileOutputStream(arquivo);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+            out.flush();
+            out.close();
+            //retornando endereco de URI onde a imagem está salva
+            return Uri.fromFile(arquivo).toString();
+        }catch (Exception e){
+            e.printStackTrace();
+            return "";
+        }
+    }
+
     //Banco de DAdos - ROOM
     private void salvarUsuarioNoBanco() {
         String nome = editNome.getText().toString();
@@ -80,7 +102,7 @@ public class MainActivity extends AppCompatActivity{
             return;
         }
 
-        String caminhoFoto = (fotoCapturada != null) ? "foto_capturada_com_sucesso" : "";
+        String caminhoFoto = salvarImagemLocal(fotoCapturada);
 
         //tipo de perfil
         String tipoSelecionado = "CLIENTE";

@@ -11,13 +11,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mainactivity.MainActivity;
+import com.example.mainactivity.CadastroUsuarioActivity;
 import com.example.mainactivity.R;
 import com.example.mainactivity.cliente.PainelClienteActivity;
 import com.example.mainactivity.database.AppDatabase;
 import com.example.mainactivity.lojista.LojistaMainActivity;
 import com.example.mainactivity.model.Usuario;
-import com.example.mainactivity.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editLoginEmail, editLoginSenha;
@@ -47,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         txtIrParaCadastro.setOnClickListener(new View.OnClickListener() { //captura a intencao de mudar de tela
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, CadastroUsuarioActivity.class);
                 startActivity(intent);
             }
         });
@@ -80,9 +79,9 @@ public class LoginActivity extends AppCompatActivity {
         if(usuarioLogado != null){
             //guardar ID do lojista
             android.content.SharedPreferences preferenciais = getSharedPreferences("sessao_vvv", MODE_PRIVATE);
-            preferenciais.edit().putInt("idUsuario", usuarioLogado.id).apply();
+            preferenciais.edit().putInt("idUsuario", usuarioLogado.idUsuario).apply();
             //informar que usuario está logado
-            Toast.makeText(this,"Usuário "+ usuarioLogado.nome + "logado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Usuário "+ usuarioLogado.nome + " logado.", Toast.LENGTH_LONG).show();
 
             //ponto de acesso para a tela principal
             if(usuarioLogado.tipoPerfil != null && usuarioLogado.tipoPerfil.equals("LOJISTA")) {

@@ -8,12 +8,13 @@
         android:id="@+id/txtTituloPedido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="25dp"
         android:text="Meu Pedido"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#212121"
-        android:background="#FFFFFF"/>
+        android:background="#FFFFFF"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItensPedido"
         android:layout_width="match_parent"

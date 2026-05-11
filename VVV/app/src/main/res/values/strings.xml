@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">MainActivity</string>
+    <string name="app_name">VVV - Vitrine Virtual de Vendas</string>
+
+    <string name="titulo_perfil">Meu Perfil</string>
+    <string name="texto_visitante">Visitante</string>
+    <string name="btn_sair">Sair da Conta</string>
+    <string name="msg_logout">Sessão encerrada com sucesso</string>
+
+    <string name="titulo_pedido">Meu Pedido</string>
+    <string name="pedido_vazio">Seu pedido está vazio.</string>
+    <string name="btn_finalizar">Finalizar Pedido</string>
+
+    <string name="hint_buscar">Buscar produto...</string>
 </resources>

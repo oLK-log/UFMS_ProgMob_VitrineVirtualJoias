@@ -73,4 +73,10 @@ public class VitrineAdapter extends RecyclerView.Adapter<VitrineAdapter.VitrineV
         }
     }
 
+    // Metodo para trocar a lista atual pela lista filtrada da busca
+    public void atualizarLista(List<Produto> novaLista) {
+        this.listaProdutos = novaLista; //
+        notifyDataSetChanged();
+    }
+
 }

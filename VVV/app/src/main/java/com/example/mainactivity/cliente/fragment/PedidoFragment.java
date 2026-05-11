@@ -2,6 +2,7 @@ package com.example.mainactivity.cliente.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,13 @@ public class PedidoFragment extends Fragment{
         carregarPedido();
         //Solicitar dados se n tiver logado
         btnFinalizarPedido.setOnClickListener(v->{
-            Toast.makeText(getContext(), "Envio pedido", Toast.LENGTH_SHORT).show();
+            //Tocando efeito sonoro
+            MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.som_magic);
+            if(mediaPlayer != null){
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(MediaPlayer::release);
+            }
+            Toast.makeText(getContext(), "Pedido Enviado", Toast.LENGTH_SHORT).show();
         });
         return view;
     }
@@ -65,17 +72,18 @@ public class PedidoFragment extends Fragment{
         if(listaItens.isEmpty()){
             rvItensPedido.setVisibility(View.GONE);
             layoutRodapePedido.setVisibility(View.GONE);
-            txtPedidoVazio.setVisibility(View.GONE);
+            txtPedidoVazio.setVisibility(View.VISIBLE);
         }else {
             rvItensPedido.setVisibility(View.VISIBLE);
             layoutRodapePedido.setVisibility(View.VISIBLE);
-            txtPedidoVazio.setVisibility(View.VISIBLE);
+            txtPedidoVazio.setVisibility(View.GONE);
             //instanciando adapter
             adapter = new PedidoAdapter(listaItens, item -> removerItem(item));
             rvItensPedido.setAdapter(adapter);
 
             calcularTotal();
         }
+        //txtPedidoVazio.setVisibility(View.INVISIBLE);
     }
 
     //met para remover item da lista de pedido

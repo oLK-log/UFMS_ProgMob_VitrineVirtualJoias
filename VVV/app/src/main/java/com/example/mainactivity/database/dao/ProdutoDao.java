@@ -38,5 +38,7 @@ public interface ProdutoDao {
     //Query para buscar os produtos em destaque/com estrela
     @Query("SELECT * FROM produtos WHERE isDestaque = 1")
     List<Produto> buscarProdutosEmDestaque();
-    
+    //Query para buscar um produto por nome
+    @Query("SELECT * FROM produtos WHERE nome LIKE '%' || :termoBusca || '%'")
+    List<Produto> buscarProdutosPorNome(String termoBusca);
 }

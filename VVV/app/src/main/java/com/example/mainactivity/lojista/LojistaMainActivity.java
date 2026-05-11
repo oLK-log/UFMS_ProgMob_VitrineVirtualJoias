@@ -21,7 +21,7 @@ public class LojistaMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vitrine);
+        setContentView(R.layout.activity_painel_lojista);
 
         // Mapeando a nossa barra de navegação
         barraNavegacao = findViewById(R.id.barra_navegacao);
