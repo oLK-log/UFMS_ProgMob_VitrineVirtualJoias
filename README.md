@@ -28,7 +28,27 @@ A ideia do Aplicativo Vitrine Virtual de Joias é um protótipo funcional de um 
   <img src="./img/entrega1_telaCategorias.png" alt="imagem tela Categorias" width="250"/>
   <img src="./img/entrega1_telaGaleria.png" alt="imagem tela Galeria" width="250"/>
 </div>
-  
+
+### Entrega 2: Persistência de Dados e Gestão de Catálogo
+Nesta etapa, o projeto deixou de ser uma vitrine estática e passou a contar com persistência de dados local, lógica de autenticação e diferentes perfis de usuário (Visitante, Cliente e Lojista), mudando o foco para o cadastro e venda de produtos em geral.
+
+#### Requisitos:
+* **Banco de Dados Local:** Utilização da biblioteca **Room Database** (SQLite abstrato) com arquitetura em Entidades e DAOs (Data Access Objects) para Usuários, Produtos e Itens do Pedido.
+* **Autenticação e Sessão:** Telas de Login e Cadastro com controle de estado do usuário.
+
+<div align="center">
+  <img src="./img/login.jpeg" alt="Tela de Login" width="250"/>
+  <img src="./img/cadastroUsuario.jpeg" alt="Cadastro de Usuário" width="250"/>
+  <img src="./img/vitrineUsuariojpeg.jpeg" alt="Vitrine de Produtos" width="250"/>
+</div>
+<br>
+<div align="center">
+  <img src="./img/pedido.jpeg" alt="Carrinho e Pedidos" width="250"/>
+  <img src="./img/cadastroProduto.jpeg" alt="Cadastro de Produtos" width="250"/>
+  <img src="./img/gerenciarProdutos.jpeg" alt="Gerenciamento pelo Lojista" width="250"/>
+</div>
+
+---
 ⚠ **Atenção**: Material com fins de aprendizado, e assim sendo, pode conter **erros** e **insconsistências**.
 
 * ### **Links e material de apoio** 📖
