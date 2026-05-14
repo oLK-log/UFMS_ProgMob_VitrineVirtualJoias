@@ -39,13 +39,19 @@ Nesta etapa, o projeto deixou de ser uma vitrine estática e passou a contar com
 <div align="center">
   <img src="img/VVV/login.jpeg" alt="Tela de Login" width="250"/>
   <img src="img/VVV/cadastroUsuario.jpeg" alt="Cadastro de Usuário" width="250"/>
-  <img src="img/VVV/cadastroProduto.jpeg" alt="Cadastro de Produtos" width="250"/>
+  <img src="img/VVV/RedefinirSenha.jpeg" alt="Redefinir senha" width="250"/>
 </div>
 <br>
 <div align="center">
-  <img src="img/VVV/pedido.jpeg" alt="Carrinho e Pedidos" width="250"/>
   <img src="img/VVV/vitrineUsuariojpeg.jpeg" alt="Vitrine de Produtos" width="250"/>
-  <img src="img/VVV/gerenciarProdutos.jpeg" alt="Gerenciamento pelo Lojista" width="250"/>
+  <img src="img/VVV/descricaoProduto.jpeg" alt="Descricao produto" width="250"/>
+  <img src="img/VVV/pedido.jpeg" alt="Carrinho e Pedidos" width="250"/>
+</div>
+<br>
+<div align="center">
+  <img src="img/VVV/gerenciarProdutos.jpeg" alt="Gerenciamento pelo Lojista" width="250"/>  
+  <img src="img/VVV/cadastroProduto.jpeg" alt="Cadastro de Produtos" width="250"/>
+  <img src="img/VVV/Perfil.jpeg" alt="Perfil do usuario" width="250"/>
 </div>
 
 ---
